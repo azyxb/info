@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+a = int(input("Entrez le Ie nombre!\n"))
+b = int(input("Entrez le IIe nombre!\n"))
+c = int(input("Entrez le IIIe nombre!\n"))
+
+if b <= a:
+    if c <= a:
+        print(f"Le plus grand parmi ces nombres est {a}")
+    if c >= a:
+        print(f"Le plus grand parmi ces nombres est {c}")
+else:
+    if c <= b:
+        print(f"Le plus grand parmi ces nombres est {b}")
+    if c >= b:
+        print(f"Le plus grand parmi ces nombres est {c}")

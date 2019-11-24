@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+a = float(input("Entrez votre nombre!\n"))
+borne_inf = -100
+borne_sup = 100
+
+if a < borne_inf or a > borne_sup:
+    print(f"{a} n'est pas dans l'intervalle [{borne_inf}, {borne_sup}]")
+else:
+    print(f"{a} est dans l'intervalle [{borne_inf}, {borne_sup}]")
