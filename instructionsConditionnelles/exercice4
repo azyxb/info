@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+oheures = int(input("Entrez le nombre d'heures que l'employé a travaillé !\n"))
+oprix = int(input("Entrez le prix unitaire d'une heure !\n"))
+
+if oheures <= 39:
+   omon = oheures * oprix
+   osup = 0
+if oheures >= 40 and oheures <= 44:
+    omon =  39 * oprix + (oheures - 39) * 1.5 * oprix
+    osup = omon - 39 * oprix
+if oheures >= 45 and oheures <= 49:
+    omon = 39 * oprix + 5 * 1.5 * oprix + (oheures - 44) * 1.75 * oprix
+    osup = omon - 39 * oprix
+if oheures  >= 50:
+    omon = 39 * oprix + 5 * 1.5 * oprix + 5 * 1.75 * oprix + (oheures - 45) * 2 * oprix
+    osup = omon - 39 * oprix
+print(f"Le montant total est {omon}")
+print(f"Le montant des heures supplémentaires est {osup}")
