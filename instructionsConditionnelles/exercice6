@@ -1,1 +1,19 @@
 #!/usr/bin/env python
+a = float(input("Entrer a !\n"))
+b = float(input("Entrer b !\n"))
+c = float(input("Entrer c !\n"))
+
+if a == 0:
+    if b == 0:
+        if c == 0:
+            print("La soulution est R")
+        else:
+            print("Aucune solution")
+    else:
+        print(f"La solution est {-b / c}")
+else:
+    d = (b * b - 4 * a * c) ** 0.5
+    if d == 0:
+        print(f"La solution est {-b / (2 * a)}")
+    else:
+        print(f"Les deux solutions sont {(-b + d)/(2 * a)} et {(-b - d)/(2 * a)}")
