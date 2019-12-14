@@ -1,16 +1,15 @@
 #!/usr/bin/env python
-j = int(input("Entrez le code du jour !\n"))
-
-
-if j<=6 and j >=2:
-    print("La boulangerie est ouverte !")
-elif j == 0:
-    h = int(input("Entrez le code de l'heure !\n"))
-    if ((h >= 7 and h < 13) or (h >= 16 and h < 20)):
-        print("La boulangerie est ouverte !")
-    else:
-        print("La boulangerie est fermée.")
-elif j == 1:
-    print("La boulangerie est fermée.")
+jour = int(input("Entrez le code du jour [0:Lundi...] : "))
+heure = int(input("Entrez le code de l'heure [0,...,23] : "))
+while jour < 0 or jour >= 7:
+    print("Format de jour invalide")
+    jour = int(input("Entrez le code du jour [0:Lundi...] : "))
+while heure < 0 or heure >= 24:
+    print("Format d'heure invalide")
+    heure = int(input("Entrez le code de l'heure [0,...,23] : "))
+a = heure >= 7 and heure < 13 and jour != 1
+b = heure >= 16 and heure < 20 and jour > 1
+if a or b:
+    print("La boulangerie est ouverte.")
 else:
-    print("42")
+    print("La boulangerie est fermée.")
