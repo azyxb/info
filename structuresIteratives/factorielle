@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+n = int(input("Entrez votre nombre: "))
+f = 1
+for k in range(2, n+1):
+    f *= k
+print(f"{n}! = {f}")

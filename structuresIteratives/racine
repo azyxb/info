@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+x = int(input("Entrez votre nombre.\n"))
+eps = 10 ** (-160) #Tolerance
+k = 0
+v = 1
+u = 0.5 * (v + x/v)
+while max(u-v, v-u) >= eps:
+   v = u 
+   print(f"U{k} = {u}")
+   u = 0.5 * (v + x/v)
+   k += 1
+print(f"lim = {u} pour N = {k}")
