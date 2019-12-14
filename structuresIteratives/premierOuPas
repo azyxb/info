@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+a = int(input("Entrez votre nombre: "))
+if a < 0:
+    print("Un nombre positif SVP.")
+osqrt = int(a ** 0.5)
+d = 0
+if a == 0 or a == 1:
+    d = 42
+else:
+    for i in range(2, osqrt + 1):
+        if a % i == 0:
+            d += 1
+if d == 0:
+    print(f"{a} est premier.")
+else:
+    print(f"{a} n'est pas premier.")
