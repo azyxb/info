@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+def afficher(k):
+    if k == 0:
+        print(" ", end = "\t")
+    else:
+        print(k, end = "\t")
+def multiple(k,n):
+    if k == 0:
+        for i in range(1, n+1):
+            print(i, end = "\t")
+    else:
+            for i in range (1, n+1):
+                print(k * i, end = "\t")
+def table(n):
+    for k in range (n+1):
+        afficher(k)
+        multiple(k, n)
+        print(end = "\n") 
+n = int(input("Entrez n"))
+print(table(n))

@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+a = int(input('Entrez le I nombre: '))
+b = int(input('Entrez le II nombre: '))
+def pgcd(a,b):
+    if b == 0 or a == 0:
+        return max(a, b)
+    else:
+        while b != 0:
+            if a % b != 0:
+                reste = a % b
+                a, b = b, reste
+            else:
+                return b
+print(f"Le pgcd de {a} et {b} est {pgcd(a,b)}")

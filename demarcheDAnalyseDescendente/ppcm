@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+a = int(input("Entrez le I nombre"))
+b = int(input("Entrez le II nombre"))
+oppcm = 0
+if a == 0 or b == 0:
+    print(f"Le ppcm de {a} et {b} est {max(a, b)}")
+else:
+    for i in range(max(a,b), a*b+1):
+        if i % a == 0 and i % b == 0:
+            oppcm = i
+            break
+print(f"Le ppcm de {a} et {b} est {oppcm}")
