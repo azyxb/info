@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+
+n = 0
+
+def lirelist(n):
+    v = []
+    for x in range(n):
+        v.append(float(input(f"Entrez le {x+1}-ieme nombre ~ ")))
+    return v
+
+# Pour que le liste ne reste pas vide
+while n <= 0:
+    n = int(input("Entrez le nombre des nombres souhaite "))
+
+# Lire la liste et sauvegarder une copie
+u = lirelist(n)
+v = u.copy()
+
+# Ecrire la liste
+print("Votre liste est\n\t{}".format(u))
+
+
+# Somme
+# Cette fonction existe deja en python
+# def somme(list):
+#     return sum(list)
+def somme(v):
+    d = 0
+    for i in range(len(v)):
+        d += v[i]
+    return d
+
+# Moyenne
+def moyenne(v):
+    return somme(v)/len(v)
+
+
+# Fonctions min et max pour deux nombres
+def min2(a,b):
+    """ Cette fonction donne le min de deux nombres. """
+    if a < b: m = a
+    else: m = b
+    return m
+def max2(a,b):
+    """ Cette fonction donne le max de deux nombres. """
+    if a > b: m = a
+    else: m = b
+    return m
+
+# Pour les fonctions min et max, j'utilise L.sort() pour son code source
+# c'est ici: https://github.com/python/cpython/blob/master/Objects/listobject.c
+
+# Minimum
+# La fonction existe deja
+# def minimum(list):
+#     return min(list)
+def minimum(u):
+    u.sort()
+    return u[0]
+# Maximum
+# La fonction existe deja
+# def maximum(list):
+#     return max(list)
+def maximum(v):
+    v.sort()
+    return v[-1]
+print("La somme des nombres de la liste\n est {}".format(somme(u)))
+print("La moyenne des nombres de la liste\n est {}".format(moyenne(u)))                
+print("Le minimum des nombres de la liste\n est {}".format(minimum(u))) 
+print("Le maximum des nombres de la liste\n est {}".format(maximum(v))) 

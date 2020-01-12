@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+def distance(u,v):
+    """ Calculer la distance entre u et v."""
+    d = 0
+    for i in range(len(u)):
+        d += (u[i] - v[i]) ** 2
+        return d ** 0.5
+
+
+def lireVecteur(n):
+    v = []
+    for x in range(n):
+        v.append(float(input(f"Entrez la composante no {x+1} ~ ")))
+    return tuple(v)
+
+
+u = lireVecteur(3)
+v = lireVecteur(3)
+norme = distance(u,v)
+
+print("La distance entre:\n\t{}\n\t{}\nest {}".format(u,v,norme))

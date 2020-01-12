@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+def lirelist(n):
+    v = []
+    for x in range(n):
+        v.append(float(input(f"Entrez le {x+1}-ieme nombre ~ ")))
+    return v
+l1 = lirelist(5)
+l2 = lirelist(5)
+l = []
+
+for i in range(5):
+    l.append(l1[i]+l2[i])
+print(f"La somme des deux listes\n\t{l1}\n\tet {l2}\nest {l}")
