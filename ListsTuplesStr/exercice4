@@ -1,1 +1,17 @@
 #!/usr/bin/env python
+b = 0
+while b <= 0:
+    b = int(input("Entrez la base > "))
+a = -1
+while a < 0:
+    a = int(input("Entrez le nombre > "))
+def digits(a,b):
+    d = []
+    q = a
+    while (q // b) > 0 :
+        d.append(q % b)
+        q = q // b
+    d.append(q)
+    return d[::-1]
+print(digits(a,b))
+        
