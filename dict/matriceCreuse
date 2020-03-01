@@ -1,0 +1,77 @@
+#!/usr/bin/env python
+def construit(liste: list):
+    """ Prendre une matrice creuse sous forme de liste
+    et la transformer en dictionnaire. """
+    nbre2lignes = len(liste)
+    if nbre2lignes == 0:
+        print("La liste est vide")
+    else:
+        nbre2collones = len(liste[0])
+        dico = {}
+        for i in range(nbre2lignes):
+            for j in range(nbre2collones):
+                if liste[i][j] != 0:
+                    dico.update( {(i,j): liste[i][j]} )
+        return dico
+
+def listevide(dico: dict):
+    """ Cette fonction prend le dictionnaire et construit une liste de
+    listes qui ne contennent que des 0. """
+# Cette fonction ne considere pas la derniere ligne ou collone si 
+# elles sont nulles.
+    nbre2lignes = 0
+    nbre2collones = 0
+    for otup in dico.keys():
+        if otup[0] > nbre2lignes:
+            nbre2lignes = otup[0]
+        if otup[1] > nbre2collones:
+            nbre2collones = otup[1]
+    liste0 = [ 0 for x in range(nbre2collones+1) ]
+    return [ liste0 for x in range(nbre2lignes+1) ]
+
+def construitInverse(dico: dict):
+    """ Cette fonction complete la fonction listevide(),
+    elle remplace les 0 par leurs valeurs."""
+# Je ne comprend pas pourquoi cette fonction remplace tous les 0.    
+    liste = listevide(dico)
+    for couple in dico:
+        print(couple)
+        liste[couple[0]][couple[1]] = dico[couple]
+    return liste
+
+def afficherMat(dico: dict):
+    """ Cette fonction affiche le dictionnaire 
+    comme un tableau. """
+    nbre2lignes = 0
+    nbre2collones = 0
+    for otup in list(dico.keys()):
+        if otup[0] > nbre2lignes:
+            nbre2lignes = otup[0]
+        if otup[1] > nbre2collones:
+            nbre2collones = otup[1]
+    for i in range(nbre2lignes+1):
+        for j in range(nbre2collones):
+            if (i,j) in dico:
+                print(dico[i,j], end='\t')
+            else:
+                print(0, end='\t')
+        if (i,nbre2collones) in dico:
+            print(dico[i,nbre2lignes])
+        else:
+            print(0)
+
+def somme(mat1: dict, mat2: dict):
+    """ Cette fonction donne la somme de deux 
+    matrices sous forme de dictionnaires. """
+    osomme = {}
+    for tup in list(mat1.keys()):
+        if tup in mat2:
+            osomme[tup] = mat1[tup] + mat2[tup]
+        else:
+            osomme[tup] = mat1[tup]
+    for tup in list(mat2.keys()):
+        if tup not in mat2:
+            osomme[tup] = mat2[tup]
+    return osomme
+
+# TODO: produit matriciel et transpose
