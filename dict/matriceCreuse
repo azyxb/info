@@ -32,12 +32,8 @@ def construitInverse(dico: dict):
     """ Cette fonction complete la fonction listevide(),
     elle remplace les 0 par leurs valeurs."""
     liste = listevide(dico)
-    for i in range(len(liste)):
-        for j in range(len(liste[i])):
-            if (i,j) in dico:
-                liste[i][j] = dico[(i,j)]
-            else:
-                liste[i][j] = 0
+    for couple in dico:
+        liste[couple[0]][couple[1]] = dico[couple]
     return liste
 
 def afficherMat(dico: dict):
