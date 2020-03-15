@@ -26,17 +26,19 @@ def listevide(dico: dict):
             nbre2lignes = otup[0]
         if otup[1] > nbre2collones:
             nbre2collones = otup[1]
-    liste0 = [ 0 for x in range(nbre2collones+1) ]
-    return [ liste0 for x in range(nbre2lignes+1) ]
+    return [ [ 0 for y in range(nbre2collones+1) ] for x in range(nbre2lignes+1) ]
 
 def construitInverse(dico: dict):
     """ Cette fonction complete la fonction listevide(),
     elle remplace les 0 par leurs valeurs."""
 # Je ne comprend pas pourquoi cette fonction remplace tous les 0.    
     liste = listevide(dico)
-    for couple in dico:
-        print(couple)
-        liste[couple[0]][couple[1]] = dico[couple]
+    for i in range(len(liste)):
+        for j in range(len(liste[i])):
+            if (i,j) in dico:
+                liste[i][j] = dico[(i,j)]
+            else:
+                liste[i][j] = 0
     return liste
 
 def afficherMat(dico: dict):
