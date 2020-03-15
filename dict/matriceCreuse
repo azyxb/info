@@ -31,7 +31,6 @@ def listevide(dico: dict):
 def construitInverse(dico: dict):
     """ Cette fonction complete la fonction listevide(),
     elle remplace les 0 par leurs valeurs."""
-# Je ne comprend pas pourquoi cette fonction remplace tous les 0.    
     liste = listevide(dico)
     for i in range(len(liste)):
         for j in range(len(liste[i])):
